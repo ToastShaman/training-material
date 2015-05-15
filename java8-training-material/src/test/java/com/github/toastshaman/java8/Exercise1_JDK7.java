@@ -9,7 +9,6 @@ import static com.github.toastshaman.java8.SampleData.*;
 public class Exercise1_JDK7 implements Exercise1 {
 
     public List<Album> albums = Arrays.asList(aLoveSupreme, manyTrackAlbum, sampleShortAlbum);
-
     public List<Artist> artists = Arrays.asList(SampleData.theBeatles, georgeHarrison, johnColtrane, johnLennon, paulMcCartney, ringoStarr);
 
     public Exercise1_JDK7() {
