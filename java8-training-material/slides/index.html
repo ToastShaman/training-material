@@ -13,7 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -30,6 +30,12 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+
+		<style media="screen">
+			.reveal pre code {
+				background-color: #3E8635 !important;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -58,7 +64,7 @@
 
 				<section>
 					<h2>Your first Lambda Expression</h2>
-					<pre><code data-trim>
+					<pre><code data-trim class="java">
 button.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent event) {
 		System.out.println("button clicked");
@@ -70,7 +76,7 @@ button.addActionListener(new ActionListener() {
 						programmers to pass around code as data. There are still four lines of boilerplate code
 						required in order to call the single line of important logic.
 					</p>
-					<pre><code data-trim>
+					<pre><code data-trim class="java">
 button.addActionListener(event ->
 	System.out.println("button clicked"));
 					</code></pre>
@@ -81,7 +87,7 @@ button.addActionListener(event ->
 
 				<section>
 					<h2>Using values</h2>
-					<pre><code data-trim>
+					<pre><code data-trim class="java">
 String name = getUsername();
 button.addActionListener(event ->
 	System.out.println("Hi " + name));
@@ -102,7 +108,7 @@ button.addActionListener(event ->
 						another, map lets you apply this function to a stream of values,
 						producing another stream of the new values.
 					</p>
-					<pre><code data-trim>
+					<pre><code data-trim class="java">
 IntStream.of(1,2,3,4,5).boxed()
 	.map(i -> i*2)
 	.collect(toList());
@@ -118,7 +124,7 @@ IntStream.of(1,2,3,4,5).boxed()
 						Any time you’re looping over some data and checking each element,
 						you might want to think about using the new filter method on Stream
 					</p>
-					<pre><code data-trim>
+					<pre><code data-trim class="java">
 IntStream.of(1,2,3,4,5).boxed()
 	.map(i -> i*2)
 	.filter(i -> i > 5)
@@ -136,14 +142,14 @@ IntStream.of(1,2,3,4,5).boxed()
 						lambda expression that gets the name of a person,
 						we would write the following:
 					</p>
-					<pre><code data-trim>
+					<pre><code data-trim class="java">
 persons.stream()
 	.map(person -> person.getName())
 	.collect(toList());
 					</code></pre>
-					<pre><code data-trim>
+					<pre><code data-trim class="java">
 persons.stream()
-	.map(person::getName)
+	.map(Person::getName)
 	.collect(toList());
 					</code></pre>
 				</section>
@@ -161,7 +167,7 @@ persons.stream()
 
 				<section>
 					<h2>Higher Order Functions</h2>
-					<pre><code data-trim>
+					<pre><code data-trim class="java">
 public List&lt;Person&gt; process(Predicate&lt;Person&gt; p,
 														Function&lt;String, Person&gt; m) {
 	persons.stream()
@@ -170,13 +176,20 @@ public List&lt;Person&gt; process(Predicate&lt;Person&gt; p,
 		.collect(toList());
 }
 					</code></pre>
-					<pre><code data-trim>
+					<pre><code data-trim class="java">
 List&lt;Person&gt; active = members.process(
 	t -> t.isActive(DateTime.now()),
 	t -> t.getFirstname() + t.getLastname()
 )
 					</code></pre>
+				</section>
 
+				<section>
+					<h2>Package java.util.function</h2>
+					<p>
+						See <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html">API documentation</a> for all of the
+						various functions you can use.
+					</p>
 				</section>
 
 			</div>
