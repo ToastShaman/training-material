@@ -128,6 +128,57 @@ IntStream.of(1,2,3,4,5).boxed()
 					</code></pre>
 				</section>
 
+				<section>
+					<h2>Method References</h2>
+					<p>
+						A common idiom you may have noticed is the creation of a lambda
+						expression that calls a method on its parameter. If we want a
+						lambda expression that gets the name of a person,
+						we would write the following:
+					</p>
+					<pre><code data-trim>
+persons.stream()
+	.map(person -> person.getName())
+	.collect(toList());
+					</code></pre>
+					<pre><code data-trim>
+persons.stream()
+	.map(person::getName)
+	.collect(toList());
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Higher Order Functions</h2>
+					<p>
+						A higher-order function is a function that either takes another
+						function as an argument or returns a function as its result. It’s
+						very easy to spot a higher-order function: just look at its signature.
+						If a functional interface is used as a parameter or return type,
+						you have a higher-order function.
+					</p>
+				</section>
+
+				<section>
+					<h2>Higher Order Functions</h2>
+					<pre><code data-trim>
+public List&lt;Person&gt; process(Predicate&lt;Person&gt; p,
+														Function&lt;String, Person&gt; m) {
+	persons.stream()
+		.filter(p)
+		.map(m)
+		.collect(toList());
+}
+					</code></pre>
+					<pre><code data-trim>
+List&lt;Person&gt; active = members.process(
+	t -> t.isActive(DateTime.now()),
+	t -> t.getFirstname() + t.getLastname()
+)
+					</code></pre>
+
+				</section>
+
 			</div>
 		</div>
 
