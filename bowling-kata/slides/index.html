@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bowling Kata and Pair Programming</title>
+
+		<meta name="description" content="Bowling Kata and Pair Programming">
+		<meta name="author" content="Kevin Denver">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style media="screen">
+			.reveal pre code {
+				background-color: #3E8635 !important;
+			}
+			b {
+				color: #75B342 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Bowling Kata</h1>
+					<h3>A Coding Kata in JavaScript and an introduction to Pair Programming</h3>
+					<p>
+						<small>Created by <a href="https://github.com/ToastShaman/">Kevin Denver</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>What Is A Coding Kata?</h2>
+					<p>
+						A <b>code kata</b> is an exercise in programming which helps a programmer
+						hone their skills through <b>practice</b> and <b>repetition</b>. The term was
+						probably first coined by Dave Thomas, co-author of the book The
+						Pragmatic Programmer, in a bow to the Japanese concept of kata in
+						the martial arts.
+					</p>
+				</section>
+
+				<section>
+					<h2>Goal</h2>
+					<p>
+						Whether or not you'll be able to implement a solution to the problem
+						in the given time is not that important. We'll repeat the exercise
+						in the coming weeks and you'll hopefully see that your solution
+						becomes better and better as time goes on.
+					</p>
+				</section>
+
+				<section>
+					<h2>Pair Programming</h2>
+					<p>
+						Pair programming is a <b>programming discipline</b> in
+						which two programmers work as a pair together on one workstation.
+						One, the <b>driver</b>, writes code while the other, the <b>navigator</b>,
+						reviews each line of code as it is typed in.
+						<b>The two programmers switch roles frequently.</b>
+					</p>
+				</section>
+
+				<section>
+					<h2>Pair Programming</h2>
+					<p>
+						While reviewing, the observer also considers the <b>strategic</b>
+						direction of the work, coming up with ideas for improvements and
+						likely future problems to address. This frees the driver to focus
+						all of his or her attention on the <b>tactical</b> aspects of completing
+						the current task, using the observer as a safety net and guide.
+					</p>
+				</section>
+
+				<section>
+					<h2>When to change Partners?</h2>
+					<ul>
+						<li>When you get tired of your current partner.</li>
+						<li>When you think your current partner is too tired or distracted to help.</li>
+						<li>When the two of you get stuck on a concept.</li>
+						<li>Lunchtime.</li>
+						<li>Or generally whenever you feel like it.</li>
+				</section>
+
+				<section>
+					<h2>Pairing Etiquette</h2>
+					<ul>
+						<li>Don’t wear headphones.</li>
+						<li>Don’t answer your cell phone while pairing unless it’s an emergency.</li>
+						<li>The more frequently we switch the driver/passenger role, the better. It keeps us both fresh and engaged.</li>
+						<li>Keep our workspace reasonably clean and clutter-free. Have some pen and paper and index cards handy.</li>
+				</section>
+
+				<section>
+					<h2>Pairing Etiquette</h2>
+					<ul>
+						<li>When you’re the passenger, be responsible for keeping a mini todo list on paper.</li>
+						<li>Finally, bring your “A game”. Pair programming crystallizes how few the productive hours
+							in the day really are. Be healthy, well-rested and ready to commit completely to working
+							together for the few hours we have.</li>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.configure({tabReplace: '  '}); hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
