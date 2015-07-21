@@ -1,0 +1,13 @@
+assertTrue(false);
+// => java.lang.AssertionError: at org.junit.Assert.fail(Assert.java:86)
+
+assertTrue("should have returned true when...", false);
+// => java.lang.AssertionError: should have returned true when...
+
+assertThat(true, equalTo(false));
+// => java.lang.AssertionError:
+//    Expected: <false> but: was <true>
+
+assertThat("should have returned true when...", true, equalTo(false));
+// => java.lang.AssertionError: should have returned true when...
+//    Expected: <false> but: was <true>

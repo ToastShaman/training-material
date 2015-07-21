@@ -1,3 +1,5 @@
 java8-training-material/.idea/
 java8-training-material/target/
 java8-training-material/java8-training-material.iml
+
+**/node_modules

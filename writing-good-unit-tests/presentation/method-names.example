@@ -1,0 +1,14 @@
+@Test
+public void shouldExtractExpiryDateFromAnnuityResponse() { .. }
+
+@Test
+public void twoPotsWithOngoingChargePercentCharges() { .. }
+
+@Test
+public void shouldBuildExpectedMessageWithMultiProduct() { .. }
+
+@Test
+public void shouldGetAllCustomersForUserId() { .. }
+
+@Test
+public void shouldGetApplicationByIdWithCedingSchemeAndBeneficiaries() { .. }
