@@ -39,7 +39,7 @@
     "install": "node ./node_modules/protractor/bin/webdriver-manager update",
     "test": "grunt test",
     "webdriver-manager": "webdriver-manager start",
-    "protractor": "protractor protractor.conf.js",
+    "protractor": "protractor test/protractor.conf.js",
     "start": "http-server dist/"
   }
 }
