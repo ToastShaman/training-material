@@ -10,4 +10,10 @@ describe('Hello World Scenario', function() {
     expect(element(by.css('.container > div > p')).getText()).toBe("This is the about view.");
   });
 
+  it('should display the todo screen', function() {
+    browser.get('/todo');
+    expect(element(by.id('test')).getText()).toBe("TODO");
+  });
+
+
 });

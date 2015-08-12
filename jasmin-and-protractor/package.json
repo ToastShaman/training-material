@@ -36,7 +36,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "install": "node ./node_modules/protractor/bin/webdriver-manager update",
+    "install": "webdriver-manager update",
     "test": "grunt test",
     "webdriver-manager": "webdriver-manager start",
     "protractor": "protractor test/protractor.conf.js",

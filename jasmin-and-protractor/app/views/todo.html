@@ -1,0 +1,9 @@
+
+<input type="text" name="description" ng-model="todoCtrl.description" value="fooBar">
+<input type="button" ng-click="todoCtrl.addItem(description)">Add</input>
+
+<ul ng-repeat="todo in todoCtrl.items">
+  <div ng-if="todo.isDone">
+    {{todo.description}}
+  </div>
+</ul>

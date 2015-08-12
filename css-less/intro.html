@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="intro.css">
+
+</head>
+<body>
+<h1>CSS</h1>
+<ul>
+    <li>
+        This is an li tag
+    </li>
+
+
+    <li id="first-id">
+        In HTML ids are used to represent a unique element
+    </li>
+
+
+    <li class="note">
+        classes are used to represent several elements that have some semantically similar property
+    </li>
+
+
+    <li class="note">
+        CSS allows us to target elements using a 'selector' and apply styles to the targeted elements
+    </li>
+
+    <li class="note">
+        Selectors can consist of tag names, ids or classes <span weird="weird">most of the time</span> and can be
+        combined
+        <div class="row">
+            <div class="col left"> left column</div>
+            <div class="col right"> right column</div>
+        </div>
+    </li>
+
+    <li>Inheritance</li>
+    <li class="note" id="specificity">Specificity has four components; let’s call them a, b, c and d. Component “a” is
+        the most distinguishing, “d” the least.
+        <ul class="sub-notes">
+            <li id="one" style="color:#008000">Component “a” is quite simple: it’s 1 for a declaration in a style
+                attribute,
+                otherwise it’s 0.
+            </li>
+            <li class="two" id="two">Component “b” is the number of id selectors in the selector (those that begin with
+                a #).
+            </li>
+            <li class="three" id="three"> Component “c” is the number of attribute selectors—including class
+                selectors—and
+                pseudo-classes.
+            </li>
+            <li class="four four-again">Component “d” is the number of element types and pseudo-elements in the
+                selector.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Source order - if specificity is the same, the last rule wins
+    </li>
+
+</ul>
+
+
+<h1>LESS</h1>
+<ul>
+    <li class="note">LESS is a superset of CSS ie LESS is CSS and more</li>
+    <li class="note">We can write any standard CSS in a .less file</li>
+    <li class="note">LESS is powerful because it allows us to nest CSS rules, use variables and write functions for
+        repeated CSS which keeps our CSS DRY, easier to maintain and read
+    </li>
+    <li class="note">Nested CSS</li>
+    <li class="note">Variables</li>
+    <li class="note">Mixins</li>
+    <li class="note">Mixins can be parametrised</li>
+    <li class="note">We can import other less files, once the less gets compiled the normal CSS rules about inheritance,
+        specificity and source order apply
+    </li>
+</ul>
+
+
+<h1>Boot strap</h1>
+<ul class="grid-demo">
+    <li class="note">Grids are made up of rows</li>
+    <li class="note">Rows are divided into 12 columns</li>
+    <li class="note">You can group columns together to make wider columns</li>
+    <li class="note">We often want to optimise our site to work well on devices with smaller screens</li>
+    <li class="note">Bootstrap allows us to specify different sized columns for different size screens (e<b>X</b>tra-<b>S</b>mall,
+        <b>SM</b>all, <b>M</b>e<b>D</b>ium, <b>L</b>ar<b>g</b>e
+    </li>
+    <li class="note">col-xs-* col-sm-* col-md-* col-lg-*, Each class scales up, so if we want to set the column width
+        for all screens we only need to set the col-xs-* class
+    </li>
+    <li class="note">
+        <div class="row">
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">1</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">6</div>
+            <div class="col-xs-3">3</div>
+            <div class="col-xs-2">2</div>
+            <div class="col-xs-1">1</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-6 col-lg-2">Responsive</div>
+            <div class="col-xs-12 col-sm-4 col-md-6 col-lg-2">Responsive</div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">Responsive</div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">Responsive</div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">Responsive</div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">Responsive</div>
+        </div>
+    </li>
+</ul>
+
+
+<!--<div class="container-fluid">-->
+
+<!--<div class="row">-->
+<!--<div class="col-xs-12 col-sm-6 col-md-3">-->
+<!--<div class="panel panel-primary">-->
+<!--<div class="panel-heading">Quotes</div>-->
+<!--<div class="panel-body">-->
+<!--<ul>-->
+<!--<li><a>View All</a></li>-->
+<!--<li><a>View most recent</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-xs-12 col-sm-6 col-md-3">-->
+<!--<div class="panel panel-warning">-->
+<!--<div class="panel-heading">Applications</div>-->
+<!--<div class="panel-body">-->
+<!--<ul>-->
+<!--<li><a>View All</a></li>-->
+<!--<li><a>View most recent</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-xs-12 col-sm-6 col-md-3">-->
+<!--<div class="panel panel-info">-->
+<!--<div class="panel-heading">Customer</div>-->
+<!--<div class="panel-body">-->
+<!--<ul>-->
+<!--<li><a>View All</a></li>-->
+<!--<li><a>View most recent</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-xs-12 col-sm-6 col-md-3">-->
+<!--<div class="panel panel-danger">-->
+<!--<div class="panel-heading">Users</div>-->
+<!--<div class="panel-body">-->
+<!--<ul>-->
+<!--<li><a>View All</a></li>-->
+<!--<li><a>View most recent</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+<!--<div class="col-xs-12 col-lg-6">-->
+<!--<img src="chart-one.png">-->
+
+
+<!--</div>-->
+<!--<div class="col-xs-12 col-lg-6">-->
+<!--<img src="chart-two.png">-->
+
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<h1>Font awesome</h1>
+
+<i class="fa fa-spinner fa-spin"></i>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<i class="fa fa-refresh fa-spin"></i>
+<i class="fa fa-cog fa-spin"></i>
+<i class="fa fa-spinner fa-pulse"></i>
+
+<i class="fa fa-camera-retro fa-lg"></i>
+<i class="fa fa-camera-retro fa-2x"></i>
+<i class="fa fa-camera-retro fa-3x"></i>
+<i class="fa fa-camera-retro fa-4x"></i>
+<i class="fa fa-camera-retro fa-5x"></i>
+
+</body>
+</html>
