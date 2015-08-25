@@ -1,0 +1,7 @@
+<div>
+  <div ng-if="controller.loading">Loading...</div>
+  <div ng-repeat="item in controller.weather">
+    <h1 ng-bind="item.day_of_week"></h1>
+    <h3 ng-bind="item.condition"></h3>
+  </div>
+</div>
