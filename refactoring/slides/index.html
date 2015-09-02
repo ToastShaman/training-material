@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Refactoring</title>
+	<meta name="description" content="Refactoring">
+	<meta name="author" content="Kevin Denver">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.010/css/hack-extended.min.css">
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/overrides.css">
+
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Refactoring</h1>
+				<h3>Improving The Design of Existing Code</h3>
+				<p>
+					<small>Created by <a href="https://github.com/ToastShaman/">Kevin Denver</a></small>
+				</p>
+			</section>
+
+			<section>
+				<section>
+					<p>
+						<img src="img/refactoringbookfowler.jpg" alt="" />
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<img src="img/working-effectively-with-legacy-code.jpg" alt="" />
+					</p>
+				</section>
+
+				<section>
+					<p>
+						Code refactoring is the process of restructuring existing computer code without changing its external behavior.
+					</p>
+				</section>
+
+				<section>
+					<h2>Why should you Refactor?</h2>
+					<p class="fragment">Improves the design of the code</p>
+					<p class="fragment">Makes software easier to understand</p>
+					<p class="fragment">Helps you find bugs</p>
+					<p class="fragment">Helps you to program faster</p>
+				</section>
+
+				<section>
+					<h2>When should you Refactor?</h2>
+					<p class="fragment">When you add a function/feature</p>
+					<p class="fragment">When you need to fix a bug</p>
+					<p class="fragment">Whenever you see a code smell</p>
+				</section>
+
+				<section>
+					<h2>When shouldn't you Refactor?</h2>
+					<p class="fragment">When the existing code is such a mess that although you could refactor it, it would be easier to start from the beginning.</p>
+				</section>
+			</section>
+
+			<section>
+				<h1>Code Smells</h1>
+				<h3>If it stinks, change it!</h3>
+			</section>
+
+			<section>
+				<section>
+					<h1>Code Smells Within Classes</h1>
+				</section>
+
+				<section>
+					<h2>Comments</h2>
+					<p>
+						There's a fine line between comments that illuminate and comments that obscure. Are the comments necessary? Do they explain "why" and not "what"? Can you refactor the code so the comments aren't required? And remember, you're writing comments for people,
+						not machines.
+					</p>
+				</section>
+
+				<section>
+					<h2>Long Method</h2>
+					<p>
+						All other things being equal, a shorter method is easier to read, easier to understand, and easier to troubleshoot. Refactor long methods into smaller methods if you can.
+					</p>
+				</section>
+
+				<section>
+					<h2>Long Parameter List</h2>
+					<p>
+						The more parameters a method has, the more complex it is. Limit the number of parameters you need in a given method, or use an object to combine the parameters.
+					</p>
+				</section>
+
+				<section>
+					<h2>Duplicate Code</h2>
+					<p>
+						Duplicated code is the bane of software development. Stamp out duplication whenever possible. You should always be on the lookout for more subtle cases of near-duplication, too.
+					</p>
+				</section>
+
+				<section>
+					<h2>Conditional Complexity</h2>
+					<p>
+						Watch out for large conditional logic blocks, particularly blocks that tend to grow larger or change significantly over time. Consider alternative object-oriented approaches such as decorator, strategy, or state.
+					</p>
+				</section>
+
+				<section>
+					<h2>Combinitorial Explosion</h2>
+					<p>
+						You have lots of code that does almost the same thing.. but with tiny variations in data or behavior. This can be difficult to refactor-- perhaps using generics or an interpreter?
+					</p>
+				</section>
+
+				<section>
+					<h2>Large Class</h2>
+					<p>
+						Large classes, like long methods, are difficult to read, understand, and troubleshoot. Does the class contain too many responsibilities? Can the large class be restructured or broken into smaller classes?
+					</p>
+				</section>
+
+				<section>
+					<h2>Uncommunicative Name</h2>
+					<p>
+						oes the name of the method succinctly describe what that method does? Could you read the method's name to another developer and have them explain to you what it does? If not, rename it or rewrite it.
+					</p>
+				</section>
+
+				<section>
+					<h2>Inconsistent Names</h2>
+					<p>
+						Pick a set of standard terminology and stick to it throughout your methods. For example, if you have Open(), you should probably have Close().
+					</p>
+				</section>
+
+				<section>
+					<h2>Dead Code</h2>
+					<p>
+						Ruthlessly delete code that isn't being used. That's why we have source control systems!
+					</p>
+				</section>
+
+				<section>
+					<h2>Speculative Generality</h2>
+					<p>
+						Write code to solve today's problems, and worry about tomorrow's problems when they actually materialize. Everyone loses in the "what if.." school of design.
+					</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Code Smells Between Classes</h1>
+				</section>
+
+				<section>
+					<h2>Data Class</h2>
+					<p>
+						Avoid classes that passively store data. Classes should contain data and methods to operate on that data, too.
+					</p>
+				</section>
+
+				<section>
+					<h2>Feature Envy</h2>
+					<p>
+						Methods that make extensive use of another class may belong in another class. Consider moving this method to the class it is so envious of.
+					</p>
+				</section>
+
+				<section>
+					<h2>Lazy Class</h2>
+					<p>
+						Classes should pull their weight. Every additional class increases the complexity of a project. If you have a class that isn't doing enough to pay for itself, can it be collapsed or combined into another class?
+					</p>
+				</section>
+
+				<section>
+					<h2>Message Chains</h2>
+					<p>
+						Watch out for long sequences of method calls or temporary variables to get routine data. Intermediaries are dependencies in disguise.
+					</p>
+				</section>
+
+				<section>
+					<h2>Middle Man</h2>
+					<p>
+						If a class is delegating all its work, why does it exist? Cut out the middleman. Beware classes that are merely wrappers over other classes or existing functionality in the framework.
+					</p>
+				</section>
+
+				<section>
+					<h2>Shotgun Surgery</h2>
+					<p>
+						If a change in one class requires cascading changes in several related classes, consider refactoring so that the changes are limited to a single class.
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<a href="http://bit.ly/1LTNqwo">http://bit.ly/1LTNqwo</a>
+					</p>
+					<p>
+						<a href="http://bit.ly/1NN7K2K">http://bit.ly/1NN7K2K</a>
+					</p>
+				</section>
+			</section>
+
+		</div>
+
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [{
+				src: 'lib/js/classList.js',
+				condition: function() {
+					return !document.body.classList;
+				}
+			}, {
+				src: 'plugin/markdown/marked.js',
+				condition: function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src: 'plugin/markdown/markdown.js',
+				condition: function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src: 'plugin/highlight/highlight.js',
+				async: true,
+				condition: function() {
+					return !!document.querySelector('pre code');
+				},
+				callback: function() {
+					hljs.configure({
+						tabReplace: '  '
+					});
+					hljs.initHighlightingOnLoad();
+				}
+			}, {
+				src: 'plugin/zoom-js/zoom.js',
+				async: true
+			}, {
+				src: 'plugin/notes/notes.js',
+				async: true
+			}]
+		});
+	</script>
+
+</body>
+
+</html>
